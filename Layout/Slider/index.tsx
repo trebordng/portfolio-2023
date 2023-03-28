@@ -27,7 +27,7 @@ const Slider = ({
           setProjects(result.projects);
           setTimeout(() => {
             setLoading(false);
-          }, 200);
+          }, 500);
         });
       fetchContent();
     }
@@ -43,14 +43,14 @@ const Slider = ({
           animate={{ y: "0%" }}
           transition={{ duration: 0.5, ease: "easeOut" }}
           exit={{ opacity: 1 }}
-          className={`${pageColor} absolute top-0 left-0 w-full h-full z-0`}
+          className={`${pageColor} absolute top-0 left-0 full-w-h z-0`}
         >
           <m.main
             initial={{ y: "20px", opacity: 0 }}
             animate={{ y: "0", opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.3, ease: "easeOut" }}
             exit={{ opacity: 1 }}
-            className={`py-48 md:py-64 lg:py-96 px-16 md:px-32 lg:px-64 absolute top-0 left-0 w-full h-full`}
+            className={` absolute overflow-auto main-p-sm md:main-p-md lg:main-p-lg hide-scroll`}
           >
             {children}
           </m.main>

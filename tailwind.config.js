@@ -11,14 +11,29 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        minHeight: { raw: "(min-height: 500px)" },
+      },
       colors: {
         white: "#FAFAFA",
         cream: "#FFE9E3",
         "light-purple": "#cac6f5",
         "light-blue": "#c6daf5",
         black: "#02050a",
-        purple:"#7C73E6"
+        purple: "#7C73E6",
       },
+    },
+    fontWeight: {
+      thin: "100",
+      hairline: "100",
+      extralight: "200",
+      light: "300",
+      normal: "400",
+      medium: "500",
+      semibold: "600",
+      bold: "700",
+      bolder: "800",
+      black: "900",
     },
     fontFamily: {
       poppins: "poppins,ui-san-serif",
@@ -27,11 +42,11 @@ module.exports = {
     zIndex: {
       0: 0,
       1: 1,
-      999:999
+      999: 999,
     },
     spacing: {
       0: 0,
-      1:"1px",
+      1: "1px",
       8: "8px",
       16: "16px",
       24: "24px",

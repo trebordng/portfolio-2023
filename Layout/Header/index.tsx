@@ -19,13 +19,13 @@ const Header = () => {
   const router = useRouter();
 
   const navClick = async (e: React.MouseEvent) => {
-    var navbar:HTMLElement|null = document.getElementById("navbar");
+    var navbar: HTMLElement | null = document.getElementById("navbar");
     navbar?.classList.add("disable-click");
-    const prevPage:string = router.asPath;
-    const prevPageIndex:number = await pages.findIndex(
+    const prevPage: string = router.asPath;
+    const prevPageIndex: number = await pages.findIndex(
       (page: Page) => prevPage === page.slug
     );
-    const currentPageIndex:number = await pages.findIndex(
+    const currentPageIndex: number = await pages.findIndex(
       (page: Page) => (e.target as HTMLInputElement).innerHTML === page.name
     );
 
@@ -40,7 +40,10 @@ const Header = () => {
   };
 
   return (
-    <nav id="navbar" className="flex justify-between font-poppins font-medium text-black text-md md:text-xl lg:text-2xl fixed left-0 right-0 z-1 px-16 md:px-32 lg:px-64 top-16 md:top-32 lg:top-64 h-32">
+    <nav
+      id="navbar"
+      className="flex justify-between font-poppins font-medium text-black text-md md:text-xl lg:text-2xl fixed left-0 right-0 z-1 px-16 md:px-32 lg:px-64 top-16 md:top-32 lg:top-64 h-32"
+    >
       <Link href="/" onClick={(e) => navClick(e)}>
         .robert
       </Link>
