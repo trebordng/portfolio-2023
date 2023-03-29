@@ -1,12 +1,22 @@
 import {create} from "zustand";
 
+interface Page {
+  loading:boolean,
+  portrait:{src:string,alt:string},
+  aboutImage:{src:string,alt:string},
+  projects:[],
+  direction:string
+}
+
 export const Page = create((set: any) => ({
   loading: true,
-  contents: [],
+  portrait: {src:"",alt:""},
+  aboutImage:{src:"",alt:""},
   projects: [],
   direction: "0%",
-  setLoading: (value: boolean) => set(() => ({ loading: value })),
-  setContents: (value: any) => set(() => ({ contents: value })),
-  setProjects: (value: any) => set(() => ({ projects: value })),
-  setDirection: (value: string) => set(() => ({ direction: value })),
+  setLoading: (loading: boolean) => set(() => ({ loading: loading })),
+  setPortrait: (portrait: {}) => set(() => ({ portrait: portrait })),
+  setAboutImage: (aboutImage: {}) => set(() => ({ aboutImage: aboutImage })),
+  setProjects: (projects: []) => set(() => ({ projects: projects })),
+  setDirection: (direction: string) => set(() => ({ direction: direction })),
 }));

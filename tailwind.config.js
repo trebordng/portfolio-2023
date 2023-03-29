@@ -21,6 +21,7 @@ module.exports = {
         "light-blue": "#c6daf5",
         black: "#02050a",
         purple: "#7C73E6",
+        blue:"#669be4"
       },
     },
     fontWeight: {
@@ -48,6 +49,7 @@ module.exports = {
       0: 0,
       1: "1px",
       8: "8px",
+      12:"12px",
       16: "16px",
       24: "24px",
       32: "32px",

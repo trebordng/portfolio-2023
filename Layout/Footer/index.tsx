@@ -3,8 +3,7 @@ import React from "react";
 import { FiFacebook, FiGithub, FiLinkedin } from "react-icons/fi";
 
 interface Media {
-  icon: React.Component;
-  slug: string;
+  Media:[{icon:React.Component,slug:string}]
 }
 
 const Footer = () => {

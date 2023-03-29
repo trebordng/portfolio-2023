@@ -45,7 +45,7 @@ const Header = () => {
       className="flex justify-between font-poppins font-medium text-black text-md md:text-xl lg:text-2xl fixed left-0 right-0 z-1 px-16 md:px-32 lg:px-64 top-16 md:top-32 lg:top-64 h-32"
     >
       <Link href="/" onClick={(e) => navClick(e)}>
-        .robert
+        <span className={`hover:underline ${router.asPath === "/" && "underline"}`}> .robert</span>
       </Link>
       <ul className="flex gap-16">
         {pages.map(

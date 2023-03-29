@@ -5,8 +5,8 @@ import { getContents } from "../../Services";
 import Loading from "@/Components/Loading";
 
 interface Data {
-  contents: string;
-  projects: string;
+  contents: any;
+  projects: any;
 }
 
 const Slider = ({
@@ -16,15 +16,32 @@ const Slider = ({
   pageColor: string;
   children: React.ReactNode;
 }) => {
-  const { direction, contents, setContents, setProjects, loading, setLoading } =
-    Page();
+  const {
+    direction,
+    setPortrait,
+    setAboutImage,
+    setProjects,
+    loading,
+    setLoading,
+  } = Page();
 
   useEffect(() => {
-    if (contents.length === 0) {
+    if (loading === true) {
+      // Fetch from GraphCMS
       const fetchContent = async () =>
         await getContents().then((result: Data) => {
-          setContents(result.contents);
+          // Save Data
+          setPortrait({
+            src: result.contents[0].node.images.url,
+            alt: result.contents[0].node.images.alt,
+          });
+          setAboutImage({
+            src: result.contents[1].node.images.url,
+            alt: result.contents[1].node.images.alt,
+          });
           setProjects(result.projects);
+
+          //remove Spin
           setTimeout(() => {
             setLoading(false);
           }, 500);
@@ -46,11 +63,11 @@ const Slider = ({
           className={`${pageColor} absolute top-0 left-0 full-w-h z-0`}
         >
           <m.main
-            initial={{ y: "20px", opacity: 0 }}
+            initial={{ y: "40px", opacity: 0 }}
             animate={{ y: "0", opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.3, ease: "easeOut" }}
             exit={{ opacity: 1 }}
-            className={` absolute overflow-auto main-p-sm md:main-p-md lg:main-p-lg hide-scroll`}
+            className={` absolute overflow-auto main-p-sm md:main-p-md lg:main-p-lg hide-scroll font-dm-sans`}
           >
             {children}
           </m.main>
