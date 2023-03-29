@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { RiCloseFill } from "react-icons/ri";
 
 const CloseButton = ({
@@ -13,9 +13,9 @@ const CloseButton = ({
   return (
     <button
       onClick={handleClose}
-      className="absolute top-16 left-16 hover:-rotate-90 hover:scale-125 transition-all duration-200"
+      className="block hover:-rotate-90 hover:scale-125 transition-all duration-200 mb-16"
     >
-      <RiCloseFill className="text-white text-2xl" />
+      <RiCloseFill className="text-white text-3xl" />
     </button>
   );
 };

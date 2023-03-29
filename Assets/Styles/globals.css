@@ -9,8 +9,13 @@ body {
   margin: 0;
   overflow: hidden;
 }
-
+#social-tab a svg{
+    position: relative;
+    transition: all 200ms;
+    top:0
+}
 #social-tab a svg:hover {
+  top:-12px;
   color: #7c73e6;
 }
 
@@ -21,12 +26,11 @@ body {
 @layer utilities {
   /* button */
   .button {
-    padding: 8px 16px;
+    padding: 8px 12px;
     position: relative;
     top: 0;
     transition: all 200ms;
     border-width: 2px;
-    font-weight: 600;
   }
   .button:hover {
     top: -12px;
@@ -46,8 +50,8 @@ body {
   .main-p-md {
     top: 64px;
     bottom: 64px;
-    right: 32px;
-    left: 32px;
+    right: 48px;
+    left: 48px;
   }
   .main-p-sm {
     top: 48px;

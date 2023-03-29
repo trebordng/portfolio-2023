@@ -1,5 +1,5 @@
 import React from "react";
-import CloseButton from "./CloseButton";
+import Container from "./Container";
 interface Skills {
   lists: [{ name: string; item: [string] }];
 }
@@ -8,7 +8,7 @@ const Skills = ({
   setOpen,
 }: {
   open: boolean;
-  setOpen: React.Dispatch<React.SetStateAction<boolean>>
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   const lists = [
     {
@@ -22,6 +22,7 @@ const Skills = ({
         "Bootstrap",
         "Tailwindcss",
         "Typescript",
+        "React Three Fiber",
       ],
     },
     {
@@ -31,7 +32,7 @@ const Skills = ({
         "Express.js",
         "Pdfkit",
         "Firebase",
-        "Mongodb(Progressing)",
+        "Mongodb (Progressing)",
       ],
     },
     {
@@ -41,22 +42,17 @@ const Skills = ({
   ];
 
   return (
-    <section
-      className={`absolute top-0  full-w-h md:w-[60%] z-999 bg-purple ${
-        open ? "opacity-1 right-0" : "opacity-0 -right-[100%]"
-      } transition-right duration-500 overflow-y-scroll hide-scroll text-right p-16 sm:p-24 md:p-32 lg:p-64`}
-    >
-      <CloseButton setOpen={setOpen} />
+    <Container open={open} setOpen={setOpen} id="skills" bgColor="bg-purple">
       {lists.map((list, index: number) => {
         return (
           <article key={index} className={`${index > 0 && "pt-64"}`}>
-            {index > 0 && <hr className="w-full h-4 text-white pb-32" />}
+            {index > 0 && <hr className="w-full h-4 text-black pb-16" />}
             <h2 className="text-2xl text-white font-bold">{list.name}</h2>
-            <div className="pt-32 flex flex-wrap gap-16 md:gap-32 justify-end">
+            <div className="pt-32 flex flex-wrap gap-16 justify-end">
               {list.item.map((language: string) => {
                 return (
                   <div
-                    className="text-white button border-2 rounded-full text-sm"
+                    className="text-black bg-white button rounded-full text-sm font-semibold"
                     key={language}
                   >
                     {language}
@@ -67,7 +63,7 @@ const Skills = ({
           </article>
         );
       })}
-    </section>
+    </Container>
   );
 };
 

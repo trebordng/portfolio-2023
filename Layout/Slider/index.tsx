@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { motion as m } from "framer-motion";
 import { Page } from "@/Context/CanvasContext";
 import { getContents } from "../../Services";
@@ -67,7 +67,7 @@ const Slider = ({
             animate={{ y: "0", opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.3, ease: "easeOut" }}
             exit={{ opacity: 1 }}
-            className={` absolute overflow-auto main-p-sm md:main-p-md lg:main-p-lg hide-scroll font-dm-sans`}
+            className={`slider absolute overflow-auto main-p-sm md:main-p-md lg:main-p-lg hide-scroll font-dm-sans`}
           >
             {children}
           </m.main>

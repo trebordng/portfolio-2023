@@ -1,4 +1,6 @@
-import React, { SetStateAction } from "react";
+import React from "react";
+import Container from "./Container";
+import { WorkPlaces } from "./WorkPlaces";
 
 const Experience = ({
   open,
@@ -8,11 +10,23 @@ const Experience = ({
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   return (
-    <section
-      className={`absolute top-0  full-w-h md:w-[60%] z-999 bg-blue ${
-        open ? "opacity-1 right-0" : "opacity-0 -right-[100%]"
-      } transition-right duration-500 overflow-y-scroll hide-scroll text-right p-16 sm:p-24 md:p-32 lg:p-64`}
-    ></section>
+    <Container open={open} setOpen={setOpen} id="experience" bgColor="bg-purple">
+        <h2 className="text-center text-white mb-32 font-bold text-2xl">Previous Jobs and Studies</h2>
+      {WorkPlaces.reverse().map((workPlace) => {
+        return (
+          <article key={workPlace.title} className="bg-white text-black rounded-lg p-16 mb-32 text-center hover:scale-110 transition-all duration-200">
+            <p className="text-md">{workPlace.company}</p>
+            <h3 className="text-xl font-semibold">{workPlace.title}</h3>
+            <em className="text-md">{workPlace.time}</em>
+            <div className="mt-16">
+              {workPlace.tasks.map((task: string,) => {
+                return <p key={task} className="leading-8 text-md">- {task}</p>;
+              })}
+            </div>
+          </article>
+        );
+      })}
+    </Container>
   );
 };
 
