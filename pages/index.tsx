@@ -6,7 +6,7 @@ const Home = () => {
   const { portrait } = Page();
 
   return (
-    <Slider pageColor="bg-cream">
+    <Slider pageColor="bg-white">
       <section className="full-w-h flex flex-col items-center minHeight:justify-center gap-16 lg:gap-32 text-black">
         <article>
           <h2 className="text-xl md:text-2xl font-medium text-center">

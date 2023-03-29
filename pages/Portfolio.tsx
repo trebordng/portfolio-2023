@@ -3,7 +3,7 @@ import React from "react";
 
 const Portfolio = () => {
   return (
-    <Slider pageColor="bg-light-blue">
+    <Slider pageColor="bg-cream">
       <div></div>
     </Slider>
   );
