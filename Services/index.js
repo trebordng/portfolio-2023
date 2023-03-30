@@ -10,12 +10,13 @@ export const getContents = async () => {
             description
             id
             languages
-            period
             slug
             title
             image {
               url
             }
+            startDate
+            endDate
           }
         }
       }

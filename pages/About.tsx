@@ -4,12 +4,14 @@ import { Page } from "@/Context/CanvasContext";
 import Slider from "@/Layout/Slider";
 import React, { useEffect, useState } from "react";
 
+
 const About = () => {
   const [openSkills, setOpenSkills] = useState<boolean>(false);
   const [openExperience, setOpenExperience] = useState<boolean>(false);
   const { aboutImage } = Page();
 
   useEffect(() => {
+    //Close tab if click outside
     document.onclick = (e: MouseEvent) => {
       var skillsContainer = document.getElementById("skills");
       var skillsButton = document.getElementById("skills-button");
@@ -29,8 +31,9 @@ const About = () => {
         setOpenExperience(false);
       }
     };
-  }, []);
+  }, []);  
 
+  // Open and Close Tab
   const handleClick = (
     open: boolean,
     setOpen: React.Dispatch<React.SetStateAction<boolean>>,
@@ -44,8 +47,8 @@ const About = () => {
     <React.Fragment>
       <Skills open={openSkills} setOpen={setOpenSkills} />
       <Experience open={openExperience} setOpen={setOpenExperience} />
-      <Slider pageColor="bg-light-blue">
-        <section className="full-w-h py-16 sm:p-16 md:p-24 lg:p-48 flex flex-col lg:flex-row gap-16">
+      <Slider pageColor="bg-light-purple">
+        <section className="w-full min-h-full py-32 md:px-48 md:py-96 lg:py-128 flex flex-col lg:flex-row gap-16 items-center">
           <article className="lg:basis-1/2">
             <h2 className="text-3xl font-bold">Hi there,</h2>
             <p className="pt-32 font-medium text-xl">

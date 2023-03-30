@@ -30,7 +30,7 @@ const Slider = ({
       // Fetch from GraphCMS
       const fetchContent = async () =>
         await getContents().then((result: Data) => {
-          console.log(result.projects);
+          //load Image before Page
           const preloadData = () => {
             for (let i = 0; i < result.contents.length; i++) {
               var image = new Image();
@@ -40,14 +40,6 @@ const Slider = ({
                   setTimeout(() => {
                     setLoading(false);
                   }, 500);
-                  // for (
-                  //   let iProject = 0;
-                  //   iProject < result.projects.length-1;
-                  //   i++
-                  // ) {
-                  //   var projectImage = new Image();
-                  //   projectImage.onload = () => {};
-                  // }
                 }
               };
               image.src = result.contents[i].node.images.url;
@@ -63,6 +55,17 @@ const Slider = ({
             src: result.contents[1].node.images.url,
             alt: result.contents[1].node.images.alt,
           });
+
+          const currentProjects = result.projects;
+          //get Date
+          for (let index = 0; index < currentProjects.length; index++) {
+            var startDate: Date = new Date(
+              currentProjects[index].node.startDate
+            );
+            var endDate: Date = new Date(currentProjects[index].node.endDate);
+            currentProjects[index].startDate = startDate;
+            currentProjects[index].endDate = endDate;
+          }
           setProjects(result.projects);
         });
       fetchContent();
