@@ -121,7 +121,7 @@ const ProjectCards = ({
                       <div
                         className={`${
                           loading ? "text-transparent opacity-60" : "text-white"
-                        } bg-purple button rounded-full zIndex-1 font-bold`}
+                        } bg-purple button rounded-full zIndex-1 font-bold border-purple`}
                       >
                         {language}
                       </div>
