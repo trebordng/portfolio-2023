@@ -85,7 +85,7 @@ const ProjectCards = ({
                   loading
                     ? "text-transparent bg-light-blue inline-block mt-4 rounded-full table"
                     : "text-black "
-                } text-xl font-med`}
+                } text-xl `}
               >
                 {project.node.company}
               </p>
@@ -94,7 +94,7 @@ const ProjectCards = ({
                   loading
                     ? "text-transparent bg-light-blue inline-block mt-4 rounded-full table"
                     : "text-black "
-                } text-2xl font-med`}
+                } text-2xl font-bold`}
               >
                 {project.node.title}
               </h3>
@@ -103,7 +103,7 @@ const ProjectCards = ({
                   loading
                     ? "text-transparent bg-light-blue inline-block mt-4 rounded-full table"
                     : "text-black "
-                } font-med`}
+                } `}
               >{`${monthNames[startMonth]} ${startYear} - ${monthNames[endMonth]} ${endYear}`}</p>
               <p
                 className={`${
