@@ -16,12 +16,14 @@ module.exports = {
       },
       colors: {
         white: "#FAFAFA",
-        cream: "#FFE9E3",
-        "light-purple": "#cac6f5",
-        "light-blue": "#c6daf5",
+        cream: "#ffefeb",
+        "light-purple": "#dfdcf9",
+        "light-blue": "#d7e5f8",
+        "faded-white":"rgba(250, 250, 250,0.8)",
+        transparent:"transparent",
         black: "#02050a",
         purple: "#7C73E6",
-        blue:"#35485E",
+        blue:"#ffad97",
         green:"#BBD8DB"
       },
     },
@@ -44,6 +46,7 @@ module.exports = {
     zIndex: {
       0: 0,
       1: 1,
+      2:2,
       999: 999,
     },
     spacing: {
@@ -63,7 +66,10 @@ module.exports = {
       256: "256px",
       320:"320px",
       416:"416px",
-      512: "512px"
+      512: "512px",
+      768:"768px",
+      1024:"1024px"
+
 
     },
   },

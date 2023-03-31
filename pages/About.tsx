@@ -48,7 +48,7 @@ const About = () => {
       <Skills open={openSkills} setOpen={setOpenSkills} />
       <Experience open={openExperience} setOpen={setOpenExperience} />
       <Slider pageColor="bg-light-purple">
-        <section className="w-full min-h-full py-32 md:px-48 md:py-96 lg:py-128 flex flex-col lg:flex-row gap-16 items-center">
+        <section className="w-full min-h-full py-32 md:px-48 md:py-96 lg:py-128 flex flex-col lg:flex-row gap-16">
           <article className="lg:basis-1/2">
             <h2 className="text-3xl font-bold">Hi there,</h2>
             <p className="pt-32 font-medium text-xl">

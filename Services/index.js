@@ -10,9 +10,10 @@ export const getContents = async () => {
             description
             id
             languages
+            company
             slug
             title
-            image {
+            images {
               url
             }
             startDate

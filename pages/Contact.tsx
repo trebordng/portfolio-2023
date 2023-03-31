@@ -3,7 +3,7 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <Slider pageColor="bg-light-purple">
+    <Slider pageColor="bg-cream">
       <div></div>
     </Slider>
   );

@@ -85,7 +85,7 @@ const Slider = ({
           className={`${pageColor} absolute top-0 left-0 full-w-h z-0`}
         >
           <m.main
-            initial={{ y: direction === "100%" ? "40px" : "-40px", opacity: 0 }}
+            initial={{ y: direction === "100%" ? "32px" : "-32px", opacity: 0 }}
             animate={{ y: "0", opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.3, ease: "easeOut" }}
             exit={{ opacity: 1 }}
