@@ -53,8 +53,8 @@ const ProjectCards = ({
             rel="noopener"
             key={project.node.slug}
             className={`${
-              loading ? "opacity-60 pointer-events-none -top-4" : "opacity-100"
-            }  hover:-top-16 hover:shadow-2xl w-1024 max-w-[100%] items-stretch min-h-fit bg-faded-white flex flex-col sm:flex-row rounded-lg transition-all duration-200 easeOut relative top-0 shadow-xl shadow-light-purple overflow-hidden`}
+              loading ? "animate-pulse opacity-60 pointer-events-none -top-4" : "opacity-100 border-2" 
+            }  hover:-top-16 w-1024 max-w-[100%] items-stretch min-h-fit bg-faded-white flex flex-col sm:flex-row rounded-lg transition-all duration-200 easeOut relative top-0 shadow-xl shadow-light-purple overflow-hidden`}
           >
             <article className="basis-2/5 relative">
               {loading && (
@@ -108,7 +108,7 @@ const ProjectCards = ({
               <p
                 className={`${
                   loading
-                    ? "text-transparent bg-light-blue inline-block mt-4 rounded-full table"
+                    ? "text-transparent bg-light-blue inline-block mt-4 rounded-md table"
                     : "text-black "
                 } text-xl mt-16 lg:mt-32 `}
               >
