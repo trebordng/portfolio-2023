@@ -21,8 +21,9 @@ const Footer = () => {
       slug: "https://www.linkedin.com/in/robert-tran-a49b251a4/",
     },
   ];
+
   return (
-    <footer className="font-dm-sans flex fixed bottom-16 md:bottom-32 lg:bottom-64  justify-between items-center left-0 right-0 px-16 md:px-32 lg:px-64 h-32">
+    <footer className="font-dm-sans flex fixed bottom-8 md:bottom-16 lg:bottom-32  justify-between items-center left-0 right-0 px-16 md:px-32 lg:px-64 h-32">
       <section
         className="text-xl md:text-2xl flex gap-16 items-center"
         id="social-tab"

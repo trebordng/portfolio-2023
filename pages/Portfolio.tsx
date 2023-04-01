@@ -2,6 +2,7 @@ import ProjectCards from "@/Components/Portfolio/ProjectCards";
 import { Page } from "@/Context/CanvasContext";
 import Slider from "@/Layout/Slider";
 import React, { useEffect, useState } from "react";
+import { BsChevronDown } from "react-icons/bs";
 
 interface Project {
   node: {
@@ -34,7 +35,6 @@ const Portfolio = () => {
       ["desc", "asc"]
     );
     setCurrentProjects(sortedProjects);
-    
 
     //Preload Data
     const preloadData = () => {
@@ -57,12 +57,13 @@ const Portfolio = () => {
   return (
     <Slider pageColor="bg-light-blue">
       <section className="w-full min-h-full py-32 md:px-48 md:py-96 lg:py-128 flex flex-col xl:flex-row gap-32 md:gap-64 justify-around">
-        <article className="xl:w-[25%]">
-          <h2 className="text-3xl font-bold whitespace-nowrap text-center">
+        <article className="xl:w-[25%] flex flex-col items-center">
+          <h2 className="text-3xl font-bold whitespace-nowrap">
             My Projects
           </h2>
+          <BsChevronDown className="text-center text-2xl animate-pulse color-black mt-32" />
         </article>
-        <ProjectCards currentProjects={currentProjects} loading={loading}/>
+        <ProjectCards currentProjects={currentProjects} loading={loading} />
       </section>
     </Slider>
   );

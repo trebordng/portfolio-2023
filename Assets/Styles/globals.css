@@ -10,12 +10,10 @@ body {
   overflow: hidden;
 }
 #social-tab a svg{
-    position: relative;
     transition: all 200ms;
-    top:0
+    color:#02050a;
 }
 #social-tab a svg:hover {
-  top:-12px;
   color: #7c73e6;
 }
 
@@ -70,8 +68,6 @@ body {
     scrollbar-width: none; /* Firefox */
   }
 }
-
-
 
 .loader {
     width: 128px;
