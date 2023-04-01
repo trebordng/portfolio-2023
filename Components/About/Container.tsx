@@ -15,9 +15,6 @@ const Container = ({
   bgColor: string;
 }) => {
   
-  useEffect(()=>{
-     console.log(document.getElementById(id))
-  })
   return (
     <section
       id={id}

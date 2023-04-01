@@ -53,7 +53,9 @@ const ProjectCards = ({
             rel="noopener"
             key={project.node.slug}
             className={`${
-              loading ? "animate-pulse opacity-60 pointer-events-none -top-4" : "opacity-100 border-2" 
+              loading
+                ? "animate-pulse opacity-60 pointer-events-none -top-16"
+                : "opacity-100 border-2"
             }  hover:-top-16 w-1024 max-w-[100%] items-stretch min-h-fit bg-faded-white flex flex-col sm:flex-row rounded-lg transition-all duration-200 easeOut relative top-0 shadow-xl shadow-light-purple overflow-hidden`}
           >
             <article className="basis-2/5 relative">
@@ -117,14 +119,13 @@ const ProjectCards = ({
               <div className="flex gap-16 mt-16 lg:mt-32 flex-wrap">
                 {project.node.languages?.map((language: string) => {
                   return (
-                    <div>
-                      <div
-                        className={`${
-                          loading ? "text-transparent opacity-60" : "text-white"
-                        } bg-purple button rounded-full zIndex-1 font-bold border-purple`}
-                      >
-                        {language}
-                      </div>
+                    <div
+                      key={language}
+                      className={`${
+                        loading ? "text-transparent opacity-60" : "text-white"
+                      } bg-purple button rounded-full zIndex-1 font-bold border-purple`}
+                    >
+                      {language}
                     </div>
                   );
                 })}
