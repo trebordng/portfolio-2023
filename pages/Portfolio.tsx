@@ -12,7 +12,7 @@ interface Project {
     startDate: string;
     endDate: string;
     description: string;
-    languages: [string];
+    languages: string[];
     slug: string;
   };
   startDate: Date;

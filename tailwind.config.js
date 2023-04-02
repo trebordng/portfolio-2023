@@ -23,7 +23,7 @@ module.exports = {
         transparent:"transparent",
         black: "#02050a",
         purple: "#7C73E6",
-        blue:"#ffad97",
+        pink:"#ffad97",
         green:"#BBD8DB"
       },
     },
@@ -46,8 +46,9 @@ module.exports = {
     zIndex: {
       0: 0,
       1: 1,
-      2:2,
+      2: 2,
       999: 999,
+      9999: 9999
     },
     spacing: {
       0: 0,

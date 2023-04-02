@@ -2,7 +2,8 @@ import { Page } from "@/Context/CanvasContext";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
-import { CiMenuFries } from "react-icons/ci";
+import PhoneNav from "./PhoneNav";
+
 interface Page {
   slug: string;
   name: string;
@@ -46,7 +47,9 @@ const Header = () => {
     >
       <Link href="/" onClick={(e) => navClick(e)}>
         <span
-          className={`hover:underline ${router.asPath === "/" && "underline"}`}
+          className={`hover:underline relative ${
+            router.asPath === "/" && "underline"
+          }`}
         >
           .robert
         </span>
@@ -67,9 +70,7 @@ const Header = () => {
             )
         )}
       </ul>
-      <button className="inline md:hidden">
-        <CiMenuFries className="text-2xl color-black"/>
-      </button>
+      <PhoneNav pages={pages} navClick={navClick} router={router} />
     </nav>
   );
 };
