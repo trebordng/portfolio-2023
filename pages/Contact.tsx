@@ -33,8 +33,8 @@ const Contact = () => {
         (result) => {
           setSuccess(true);
           setTimeout(() => {
-            // setLoading(false);
-            // setSuccess(false);
+            setLoading(false);
+            setSuccess(false);
           }, 2000);
         },
         (error) => {

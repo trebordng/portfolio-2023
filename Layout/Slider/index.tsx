@@ -25,7 +25,7 @@ const Slider = ({
         slider.addEventListener("scroll", (e: any) => {
           if (
             Math.ceil(slider.scrollHeight - slider.scrollTop) ===
-            slider.clientHeight + 200
+            slider.clientHeight
           ) {
             setScroll(false);
           } else {
