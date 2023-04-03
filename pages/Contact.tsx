@@ -1,7 +1,8 @@
 import Slider from "@/Layout/Slider";
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
-import { MdOutlineDone } from "react-icons/Md";
+import { MdOutlineDone } from "react-icons/md";
+
 interface Input {
   name: string;
   placeholder: string;
