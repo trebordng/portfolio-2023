@@ -67,8 +67,10 @@ export default function App({ Component, pageProps, router }: AppProps) {
     <React.Fragment>
       <Head>
         <title>
-          Robert Tran 
-          {!loading && router.asPath !== "/" ? " - " + router?.asPath.substring(1) : ""}
+          Robert Tran
+          {!loading && router.asPath !== "/"
+            ? " - " + router?.asPath.substring(1)
+            : ""}
         </title>
         <meta
           name="description"
@@ -76,6 +78,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
           content={`Robert Tran - ${router?.asPath}`}
           key="title"
         />
+        <link rel="shortcut icon" href="/favicon.png" />
       </Head>
       <Header />
       <AnimatePresence>
