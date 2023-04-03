@@ -33,8 +33,8 @@ const Contact = () => {
         (result) => {
           setSuccess(true);
           setTimeout(() => {
-            setLoading(false);
-            setSuccess(false);
+            // setLoading(false);
+            // setSuccess(false);
           }, 2000);
         },
         (error) => {
@@ -54,9 +54,9 @@ const Contact = () => {
           {loading && (
             <div className={`absolute top-0 left-0 full-w-h bg-faded-white z-999  flex justify-center items-center`}>
               {!success && <span className="loader"></span>}
-              <div className={`${success?"opacity-1":"opacity-0 "} absolute transition-opacity duration-200 flex flex-col items-center`}>
+              <div className={`${success?"opacity-1":"opacity-0 "} absolute transition-opacity duration-200 flex flex-col items-center p-32`}>
                 <MdOutlineDone className="text-8xl text-purple"/>
-                <p className="text-xl text-black font-semibold">Thank You for Contacting! I'll Reply ASAP</p>
+                <p className="text-xl text-black font-semibold text-center">Thank You for Contacting! I'll Reply ASAP</p>
               </div>
             </div>
           )}

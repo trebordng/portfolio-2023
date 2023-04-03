@@ -21,6 +21,10 @@ body {
   pointer-events: none;
 }
 
+a {
+    outline:none;
+}
+
 @layer utilities {
   /* button */
   .button {
@@ -29,6 +33,7 @@ body {
     top: 0;
     transition: all 200ms;
     border-width: 2px;
+    outline:none;
   }
   .button:hover {
     top: -12px;

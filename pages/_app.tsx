@@ -71,6 +71,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
           {!loading && router.asPath !== "/" ? " - " + router?.asPath.substring(1) : ""}
         </title>
         <meta
+          name="description"
           property="og:title"
           content={`Robert Tran - ${router?.asPath}`}
           key="title"
