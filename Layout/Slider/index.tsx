@@ -21,11 +21,10 @@ const Slider = ({
         } else {
           setScroll(true);
         }
-
         slider.addEventListener("scroll", (e: any) => {
           if (
             Math.ceil(slider.scrollHeight - slider.scrollTop) ===
-            slider.clientHeight
+            parseInt(slider.clientHeight)
           ) {
             setScroll(false);
           } else {

@@ -24,11 +24,11 @@ const Home = () => {
             className="w-192 h-192 sm:w-256 sm:h-256 md:w-320 md:h-320 lg:w-416 lg:h-416 object-cover rounded-full bg-purple"
           />
         </figure>
-        <a href="./RT Resume.pdf" target="_blank" rel="noopener">
+        <Link href="./RT Resume.pdf" target="_blank" rel="noopener">
           <button className="button md:text-med border-black rounded text-black hover:text-purple hover:border-purple font-bold">
             My Resumé
           </button>
-        </a>
+        </Link >
       </section>
     </Slider>
   );
