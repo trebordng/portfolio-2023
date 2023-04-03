@@ -2,7 +2,6 @@ import ProjectCards from "@/Components/Portfolio/ProjectCards";
 import { Page } from "@/Context/CanvasContext";
 import Slider from "@/Layout/Slider";
 import React, { useEffect, useState } from "react";
-import { BsChevronDown } from "react-icons/bs";
 
 interface Project {
   node: {
@@ -22,7 +21,7 @@ interface Project {
 const Portfolio = () => {
   const _ = require("lodash");
   const { projects } = Page();
-  const [currentProjects, setCurrentProjects] = useState<[Project]>();
+  const [currentProjects, setCurrentProjects] = useState<Project[]>();
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -61,7 +60,6 @@ const Portfolio = () => {
           <h2 className="text-3xl font-bold whitespace-nowrap">
             My Projects
           </h2>
-          <BsChevronDown className="text-center text-2xl animate-pulse color-black mt-32" />
         </article>
         <ProjectCards currentProjects={currentProjects} loading={loading} />
       </section>

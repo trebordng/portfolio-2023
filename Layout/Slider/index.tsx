@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion as m } from "framer-motion";
 import { Page } from "@/Context/CanvasContext";
 import Loading from "@/Components/Loading";
@@ -10,7 +10,31 @@ const Slider = ({
   pageColor: string;
   children: React.ReactNode;
 }) => {
-  const { direction, loading } = Page();
+  const { direction, loading, changePage, setScroll } = Page();
+
+  useEffect(() => {
+    if (!loading) {
+      setTimeout(() => {
+        const slider: any = document.getElementById(pageColor + "slider");
+        if (slider.offsetHeight === slider.scrollHeight) {
+          setScroll(false);
+        } else {
+          setScroll(true);
+        }
+        
+        slider.addEventListener("scroll", (e: any) => {
+          if (
+            Math.ceil(slider.scrollHeight - slider.scrollTop) ===
+            slider.clientHeight
+          ) {
+            setScroll(false);
+          } else {
+            setScroll(true);
+          }
+        });
+      }, 200);
+    }
+  }, [changePage, loading]);
 
   return (
     <React.Fragment>
@@ -25,7 +49,7 @@ const Slider = ({
           className={`${pageColor} absolute top-0 left-0 full-w-h z-0`}
         >
           <m.main
-            id="slider"
+            id={pageColor + "slider"}
             initial={{ y: direction === "100%" ? "32px" : "-32px", opacity: 0 }}
             animate={{ y: "0", opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.3, ease: "easeOut" }}

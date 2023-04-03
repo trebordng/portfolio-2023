@@ -1,7 +1,8 @@
 import React from "react";
 import Container from "./Container";
 interface Skills {
-  lists: [{ name: string; item: [string] }];
+  name: string;
+  item: string[];
 }
 const Skills = ({
   open,
@@ -10,7 +11,7 @@ const Skills = ({
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-  const lists = [
+  const lists: Skills[] = [
     {
       name: "Front-End",
       item: [
@@ -43,9 +44,9 @@ const Skills = ({
 
   return (
     <Container open={open} setOpen={setOpen} id="skills" bgColor="bg-purple">
-      {lists.map((list, index: number) => {
+      {lists.map((list:Skills, index: number) => {
         return (
-          <article key={index} className={`${index > 0 && "pt-64"}`}>
+          <article key={list.name} className={`${index > 0 && "pt-64"}`}>
             {index > 0 && <hr className="w-full h-4 text-black pb-16" />}
             <h2 className="text-2xl text-white font-bold">{list.name}</h2>
             <div className="pt-32 flex flex-wrap gap-16 justify-end">

@@ -3,9 +3,10 @@ import type { AppProps } from "next/app";
 import { AnimatePresence } from "framer-motion";
 import Header from "@/Layout/Header";
 import Footer from "@/Layout/Footer";
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import { Page } from "@/Context/CanvasContext";
 import { getContents } from "../Services";
+import Head from "next/head";
 
 interface Data {
   contents: any;
@@ -13,13 +14,8 @@ interface Data {
 }
 
 export default function App({ Component, pageProps, router }: AppProps) {
-  const {
-    setPortrait,
-    setAboutImage,
-    setProjects,
-    loading,
-    setLoading,
-  } = Page();
+  const { setPortrait, setAboutImage, setProjects, loading, setLoading } =
+    Page();
 
   useEffect(() => {
     if (loading === true) {
@@ -67,9 +63,19 @@ export default function App({ Component, pageProps, router }: AppProps) {
       fetchContent();
     }
   }, []);
-
   return (
     <React.Fragment>
+      <Head>
+        <title>
+          Robert Tran 
+          {!loading && router.asPath !== "/" ? " - " + router?.asPath.substring(1) : ""}
+        </title>
+        <meta
+          property="og:title"
+          content={`Robert Tran - ${router?.asPath}`}
+          key="title"
+        />
+      </Head>
       <Header />
       <AnimatePresence>
         <Component key={router.pathname} {...pageProps} />

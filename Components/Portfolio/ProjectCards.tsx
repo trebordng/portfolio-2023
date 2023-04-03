@@ -9,7 +9,7 @@ interface Project {
     startDate: string;
     endDate: string;
     description: string;
-    languages: [string];
+    languages: string[];
     slug: string;
   };
   startDate: Date;
@@ -25,8 +25,8 @@ const ProjectCards = ({
 }) => {
   return (
     <article className="flex flex-col gap-32 md:gap-64 flex-wrap xl:w-[75%] items-center">
-      {currentProjects?.map((project: Project, index: number) => {
-        const monthNames = [
+      {currentProjects?.map((project: Project) => {
+        const monthNames:string[]= [
           "January",
           "February",
           "March",

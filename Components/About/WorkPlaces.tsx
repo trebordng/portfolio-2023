@@ -1,13 +1,13 @@
-interface Work {
-  WorkPlaces: [
-    { company: string; title: string; time: string; tasks: [string] }
-  ];
+interface WorkPlace {
+   company: string; title: string; time: string; tasks: string[]
+  
 }
 
-export const WorkPlaces = [
+export const WorkPlaces:WorkPlace[] = [
   {
     company: "Pakko",
     title: "Junior Web Developer",
+    time:"Jul 2022 - Nov 2022",
     tasks: [
       "Maintain and update main website at https://Pakko.com.au/ with Wordpress",
       "Design and create different web templates for internal usage",

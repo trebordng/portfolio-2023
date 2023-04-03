@@ -40,9 +40,9 @@ const PhoneNav = ({
       <ul
         className={`${
           open
-            ? "opacity-1 z-999 top-0 left-0 "
+            ? "opacity-1 z-999 left-0 "
             : "opacity-0 -z-999 -left-[100%]"
-        } transition-top duration-200 easeOut fixed w-[100vw] h-[100vh] bg-purple flex flex-col items-center justify-center gap-32 `}
+        } transition-top duration-200 easeOut fixed w-[100vw] h-[100vh] bg-purple flex top-0  flex-col items-center justify-center gap-32 `}
       >
         {pages.map(
           (page: Page) =>

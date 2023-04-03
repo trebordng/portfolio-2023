@@ -1,7 +1,7 @@
 import Slider from "@/Layout/Slider";
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
-
+import { MdOutlineDone } from "react-icons/Md";
 interface Input {
   name: string;
   placeholder: string;
@@ -30,15 +30,17 @@ const Contact = () => {
       )
       .then(
         (result) => {
-          setLoading(false);
           setSuccess(true);
           setTimeout(() => {
+            setLoading(false);
             setSuccess(false);
-          }, 1500);
-          console.log(result.text);
+          }, 2000);
         },
         (error) => {
-          console.log(error.text);
+          alert(error)
+          setTimeout(() => {
+            setLoading(false);
+          }, 2000);
         }
       );
     e.target?.reset();
@@ -47,7 +49,17 @@ const Contact = () => {
   return (
     <Slider pageColor="bg-cream">
       <section className="w-full min-h-full py-32 md:px-48 md:py-96 lg:py-128 flex justify-center items-center ">
-        <div className="bg-faded-white w-1024 max-w-[100%] min-h-fit rounded-lg shadow-xl shadow-light-purple overflow-hidden">
+        <div className="bg-faded-white w-1024 max-w-[100%] min-h-fit rounded-lg shadow-xl shadow-light-purple overflow-hidden relative">
+          {loading && (
+            <div className={`absolute top-0 left-0 full-w-h bg-faded-white z-999  flex justify-center items-center`}>
+              {!success && <span className="loader"></span>}
+              <div className={`${success?"opacity-1":"opacity-0 "} absolute transition-opacity duration-200 flex flex-col items-center`}>
+                <MdOutlineDone className="text-8xl text-purple"/>
+                <p className="text-xl text-black font-semibold">Thank You for Contacting! I'll Reply ASAP</p>
+              </div>
+            </div>
+          )}
+
           <article className="w-full  p-32 flex justify-between items-center bg-purple">
             <div className="flex gap-8 sm:gap-16">
               {dots.map((dot: string) => {

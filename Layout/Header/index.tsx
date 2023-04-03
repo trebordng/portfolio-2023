@@ -10,13 +10,13 @@ interface Page {
 }
 
 const Header = () => {
-  const pages = [
+  const pages:Page[] = [
     { slug: "/", name: ".robert" },
     { slug: "/About", name: "About" },
     { slug: "/Portfolio", name: "Portfolio" },
     { slug: "/Contact", name: "Contact" },
   ];
-  const { setDirection } = Page();
+  const { setDirection, setChangePage } = Page();
   const router = useRouter();
 
   const navClick = async (e: React.MouseEvent) => {
@@ -29,7 +29,7 @@ const Header = () => {
     const currentPageIndex: number = await pages.findIndex(
       (page: Page) => (e.target as HTMLInputElement).innerHTML === page.name
     );
-
+    setChangePage(currentPageIndex);
     if (prevPageIndex <= currentPageIndex) {
       setDirection("100%");
     } else {
@@ -41,37 +41,39 @@ const Header = () => {
   };
 
   return (
-    <nav
-      id="navbar"
-      className="flex justify-between font-poppins font-medium text-black text-xl md:text-2xl fixed left-0 right-0 z-1 px-16 md:px-32 lg:px-64 top-8 md:top-16 lg:top-32 h-32"
-    >
-      <Link href="/" onClick={(e) => navClick(e)}>
-        <span
-          className={`hover:underline relative ${
-            router.asPath === "/" && "underline"
-          }`}
-        >
-          .robert
-        </span>
-      </Link>
-      <ul className="flex gap-16 hidden md:flex">
-        {pages.map(
-          (page: Page) =>
-            page.slug !== "/" && (
-              <li
-                onClick={(e) => navClick(e)}
-                key={page.slug}
-                className={`hover:underline ${
-                  router.asPath === page.slug && "underline"
-                } transition:"all 0.5s"`}
-              >
-                <Link href={page.slug}>{page.name}</Link>
-              </li>
-            )
-        )}
-      </ul>
-      <PhoneNav pages={pages} navClick={navClick} router={router} />
-    </nav>
+    <React.Fragment>
+      <nav
+        id="navbar"
+        className="flex justify-between font-poppins font-medium text-black text-xl md:text-2xl fixed left-0 right-0 z-1 px-16 md:px-32 lg:px-64 top-8 md:top-16 lg:top-32 h-32"
+      >
+        <Link href="/" onClick={(e) => navClick(e)}>
+          <span
+            className={`hover:underline relative ${
+              router.asPath === "/" && "underline"
+            }`}
+          >
+            .robert
+          </span>
+        </Link>
+        <ul className="flex gap-16 hidden md:flex">
+          {pages.map(
+            (page: Page) =>
+              page.slug !== "/" && (
+                <li
+                  onClick={(e) => navClick(e)}
+                  key={page.slug}
+                  className={`hover:underline ${
+                    router.asPath === page.slug && "underline"
+                  } transition:"all 0.5s"`}
+                >
+                  <Link href={page.slug}>{page.name}</Link>
+                </li>
+              )
+          )}
+        </ul>
+        <PhoneNav pages={pages} navClick={navClick} router={router} />
+      </nav>
+    </React.Fragment>
   );
 };
 
