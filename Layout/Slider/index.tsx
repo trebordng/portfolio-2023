@@ -16,15 +16,15 @@ const Slider = ({
     if (!loading) {
       setTimeout(() => {
         const slider: any = document.getElementById(pageColor + "slider");
-        if (slider.offsetHeight === slider.scrollHeight) {
+        if (slider?.offsetHeight === slider?.scrollHeight) {
           setScroll(false);
         } else {
           setScroll(true);
         }
-        slider.addEventListener("scroll", (e: any) => {
+        slider?.addEventListener("scroll", (e: any) => {
           if (
-            Math.ceil(slider.scrollHeight - slider.scrollTop) ===
-            parseInt(slider.clientHeight)
+            Math.ceil(slider?.scrollHeight - slider?.scrollTop) ===
+            parseInt(slider?.clientHeight)
           ) {
             setScroll(false);
           } else {

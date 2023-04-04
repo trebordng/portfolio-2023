@@ -26,7 +26,7 @@ const ProjectCards = ({
   return (
     <article className="flex flex-col gap-32 md:gap-64 flex-wrap xl:w-[75%] items-center">
       {currentProjects?.map((project: Project) => {
-        const monthNames:string[]= [
+        const monthNames: string[] = [
           "January",
           "February",
           "March",
@@ -72,14 +72,15 @@ const ProjectCards = ({
                   </svg>
                 </div>
               )}
-
-              <img
-                className={`${
-                  loading ? "opacity-0" : "opacity-100"
-                } full-w-h object-cover`}
-                src={project.node.images.url}
-                alt={project.node.images.alt}
-              />
+              <figure>
+                <img
+                  className={`${
+                    loading ? "opacity-0" : "opacity-100"
+                  } full-w-h object-cover`}
+                  src={project.node.images.url}
+                  alt={project.node.images.alt}
+                />
+              </figure>
             </article>
             <article className="p-16 sm:p-32 basis-3/5">
               <p

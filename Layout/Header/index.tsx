@@ -1,22 +1,25 @@
 import { Page } from "@/Context/CanvasContext";
+import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useState } from "react";
 import PhoneNav from "./PhoneNav";
 
 interface Page {
   slug: string;
   name: string;
+  title: string;
 }
 
 const Header = () => {
-  const pages:Page[] = [
-    { slug: "/", name: ".robert" },
-    { slug: "/About", name: "About" },
-    { slug: "/Portfolio", name: "Portfolio" },
-    { slug: "/Contact", name: "Contact" },
+  const pages: Page[] = [
+    { slug: "/", name: ".robert", title: "" },
+    { slug: "/About", name: "About", title: "- About" },
+    { slug: "/Portfolio", name: "Portfolio", title: "- Portfolio" },
+    { slug: "/Contact", name: "Contact", title: "- Contact" },
   ];
   const { setDirection, setChangePage } = Page();
+  const [currentPage, setCurrentPage] = useState<string>("");
   const router = useRouter();
 
   const navClick = async (e: React.MouseEvent) => {
@@ -29,6 +32,7 @@ const Header = () => {
     const currentPageIndex: number = await pages.findIndex(
       (page: Page) => (e.target as HTMLInputElement).innerHTML === page.name
     );
+    setCurrentPage(pages[currentPageIndex].title);
     setChangePage(currentPageIndex);
     if (prevPageIndex <= currentPageIndex) {
       setDirection("100%");
@@ -42,6 +46,16 @@ const Header = () => {
 
   return (
     <React.Fragment>
+      <Head>
+        <title>Robert Tran {currentPage}</title>
+        <meta
+          name="description"
+          property="og:title"
+          content={`Robert Tran - ${currentPage}`}
+          key="title"
+        />
+        <link rel="shortcut icon" href="/image/favicon.ico" />
+      </Head>
       <nav
         id="navbar"
         className="flex justify-between font-poppins font-medium text-black text-xl md:text-2xl fixed left-0 right-0 z-1 px-16 md:px-32 lg:px-64 top-8 md:top-16 lg:top-32 h-32"

@@ -6,7 +6,6 @@ import Footer from "@/Layout/Footer";
 import React, { useEffect } from "react";
 import { Page } from "@/Context/CanvasContext";
 import { getContents } from "../Services";
-import Head from "next/head";
 
 interface Data {
   contents: any;
@@ -65,20 +64,6 @@ export default function App({ Component, pageProps, router }: AppProps) {
   }, []);
   return (
     <React.Fragment>
-      <Head>
-        <title>
-          {!loading && router.asPath !== "/"
-            ? "Robert Tran - " + router?.asPath.substring(1)
-            : "Robert Tran"}
-        </title>
-        <meta
-          name="description"
-          property="og:title"
-          content={`Robert Tran - ${router?.asPath}`}
-          key="title"
-        />
-        <link rel="shortcut icon" href="/image/favicon.ico" />
-      </Head>
       <Header />
       <AnimatePresence>
         <Component key={router.pathname} {...pageProps} />
