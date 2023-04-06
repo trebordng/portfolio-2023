@@ -13,7 +13,7 @@ interface Page {
 
 const Header = () => {
   const pages: Page[] = [
-    { slug: "/", name: ".robert", title: "" },
+    { slug: "/", name: ".robert", title: "- Web Developer" },
     { slug: "/About", name: "About", title: "- About" },
     { slug: "/Portfolio", name: "Portfolio", title: "- Portfolio" },
     { slug: "/Contact", name: "Contact", title: "- Contact" },
