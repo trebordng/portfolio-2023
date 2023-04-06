@@ -13,10 +13,10 @@ interface Page {
 
 const Header = () => {
   const pages: Page[] = [
-    { slug: "/", name: ".robert", title: "- Web Developer" },
-    { slug: "/About", name: "About", title: "- About" },
-    { slug: "/Portfolio", name: "Portfolio", title: "- Portfolio" },
-    { slug: "/Contact", name: "Contact", title: "- Contact" },
+    { slug: "/", name: ".robert", title: "| Web Developer" },
+    { slug: "/About", name: "About", title: "| About" },
+    { slug: "/Portfolio", name: "Portfolio", title: "| Portfolio" },
+    { slug: "/Contact", name: "Contact", title: "| Contact" },
   ];
   const { setDirection, setChangePage } = Page();
   const router = useRouter();
@@ -57,7 +57,7 @@ const Header = () => {
         <meta
           name="description"
           property="og:title"
-          content={`Robert Tran - Web Developer`}
+          content={`Robert Tran | Web Developer`}
           key="title"
         />
         <link rel="shortcut icon" href="/image/favicon.ico" />
