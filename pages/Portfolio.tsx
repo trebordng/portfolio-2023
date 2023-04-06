@@ -44,7 +44,7 @@ const Portfolio = () => {
             //remove Spin
             setTimeout(() => {
               setLoading(false);
-            }, 200);
+            }, 800);
           }
         };
         image.src = sortedProjects[i].node.images?.url;
