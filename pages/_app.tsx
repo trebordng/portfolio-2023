@@ -4,7 +4,7 @@ import { AnimatePresence } from "framer-motion";
 import Header from "@/Layout/Header";
 import Footer from "@/Layout/Footer";
 import React, { useEffect } from "react";
-import { Page } from "@/Context/CanvasContext";
+import { Page, Projects } from "@/Context/CanvasContext";
 import { getContents } from "../Services";
 
 interface Data {
@@ -13,8 +13,9 @@ interface Data {
 }
 
 export default function App({ Component, pageProps, router }: AppProps) {
-  const { setPortrait, setAboutImage, setProjects, loading, setLoading } =
-    Page();
+  const { setPortrait, setAboutImage, loading, setLoading } = Page();
+
+  const { setProjects } = Projects();
 
   useEffect(() => {
     if (loading === true) {
