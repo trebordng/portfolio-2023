@@ -47,11 +47,11 @@ const Header = () => {
   return (
     <React.Fragment>
       <Head>
-        <title>{`Robert Tran` + currentPage}</title>
+        <title>{`Robert Tran ` + currentPage}</title>
         <meta
           name="description"
           property="og:title"
-          content={`Robert Tran ${currentPage}`}
+          content={`Robert Tran ` + currentPage}
           key="title"
         />
         <link rel="shortcut icon" href="/image/favicon.ico" />
