@@ -2,7 +2,7 @@ import { Page } from "@/Context/CanvasContext";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PhoneNav from "./PhoneNav";
 
 interface Page {
@@ -19,8 +19,15 @@ const Header = () => {
     { slug: "/Contact", name: "Contact", title: "- Contact" },
   ];
   const { setDirection, setChangePage } = Page();
-  const [currentPage, setCurrentPage] = useState<string>("");
   const router = useRouter();
+  const [currentPage, setCurrentPage] = useState<string>("");
+
+  useEffect(() => {
+    const currentPageIndex: number = pages.findIndex(
+      (page: Page) => router.asPath === page.slug
+    );
+    setCurrentPage(pages[currentPageIndex]?.title);
+  }, [router.asPath]);
 
   const navClick = async (e: React.MouseEvent) => {
     var navbar: HTMLElement | null = document.getElementById("navbar");
@@ -32,7 +39,6 @@ const Header = () => {
     const currentPageIndex: number = await pages.findIndex(
       (page: Page) => (e.target as HTMLInputElement).innerHTML === page.name
     );
-    setCurrentPage(pages[currentPageIndex]?.title);
     setChangePage(currentPageIndex);
     if (prevPageIndex <= currentPageIndex) {
       setDirection("100%");
