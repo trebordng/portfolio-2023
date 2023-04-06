@@ -32,7 +32,7 @@ const Header = () => {
     const currentPageIndex: number = await pages.findIndex(
       (page: Page) => (e.target as HTMLInputElement).innerHTML === page.name
     );
-    setCurrentPage(pages[currentPageIndex].title);
+    setCurrentPage(pages[currentPageIndex]?.title);
     setChangePage(currentPageIndex);
     if (prevPageIndex <= currentPageIndex) {
       setDirection("100%");
@@ -47,7 +47,7 @@ const Header = () => {
   return (
     <React.Fragment>
       <Head>
-        <title>Robert Tran {currentPage}</title>
+        <title>{`Robert Tran` + currentPage}</title>
         <meta
           name="description"
           property="og:title"

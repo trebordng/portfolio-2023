@@ -55,8 +55,8 @@ const ProjectCards = ({
             className={`${
               loading
                 ? "animate-pulse opacity-60 pointer-events-none -top-16"
-                : "opacity-100"
-            }  hover:-top-16 w-1024 max-w-[100%] items-stretch min-h-fit bg-faded-white flex flex-col sm:flex-row rounded-lg transition-all duration-200 easeOut relative top-0 shadow-xl shadow-light-purple overflow-hidden`}
+                : "opacity-100 top-0"
+            }  hover:-top-16 w-1024 max-w-[100%] items-stretch min-h-fit bg-faded-white flex flex-col sm:flex-row rounded-lg transition-top duration-200 easeOut relative shadow-xl shadow-light-purple overflow-hidden`}
           >
             <article className="basis-2/5 relative">
               {loading && (
@@ -72,7 +72,7 @@ const ProjectCards = ({
                   </svg>
                 </div>
               )}
-              <figure>
+              <figure className="full-w-h">
                 <img
                   className={`${
                     loading ? "opacity-0" : "opacity-100"
