@@ -57,7 +57,7 @@ const Header = () => {
         <meta
           name="description"
           property="og:title"
-          content={`Robert Tran ` + currentPage}
+          content={`Robert Tran - Web Developer`}
           key="title"
         />
         <link rel="shortcut icon" href="/image/favicon.ico" />
