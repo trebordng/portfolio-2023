@@ -6,6 +6,7 @@ import Footer from "@/Layout/Footer";
 import React, { useEffect } from "react";
 import { Page, Projects } from "@/Context/CanvasContext";
 import { getContents } from "../Services";
+import { Analytics } from '@vercel/analytics/react';
 
 interface Data {
   contents: any;
@@ -70,6 +71,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
         <Component key={router.pathname} {...pageProps} />
       </AnimatePresence>
       <Footer />
+      <Analytics />
     </React.Fragment>
   );
 }

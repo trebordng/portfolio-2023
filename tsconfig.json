@@ -18,6 +18,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "Layout/Animation/index.js", "Context/CanvasContext.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "Layout/Animation/index.js", "Context/CanvasContext.js", "Components/About/WorkPlaces.jsx"],
   "exclude": ["node_modules"]
 }
